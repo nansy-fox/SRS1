@@ -1,0 +1,30 @@
+﻿<Page x:Class="Practical_for_BD.Pages.Update"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Practical_for_BD.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Update" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible" Content="Фамилия" Margin="20,34,681,319"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible" Content="Имя" Margin="20,81,681,271"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible" Content="Отчество" Margin="20,136,681,217"/>
+        <TextBox HorizontalAlignment="Left"  Margin="119,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="24" Name="txtbSurname"/>
+        <TextBox HorizontalAlignment="Left"  Margin="119,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="25" Name="txtbPatronimyc"/>
+        <TextBox HorizontalAlignment="Left"  Margin="119,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" Height="25" Name="txtbName"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="Маршрут" Margin="20,189,681,164"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible" Margin="119,196,0,0" Name="cbRoutes" DisplayMemberPath="Name" Width="236"/>
+
+        <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="updateButton" Content="Сохранить" Click="updateButton_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

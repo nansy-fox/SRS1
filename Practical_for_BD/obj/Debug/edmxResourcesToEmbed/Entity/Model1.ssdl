@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Public_transportModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chart">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_employers" Type="bigint" Nullable="false" />
+    <Property Name="start_working_day" Type="time" Precision="4" Nullable="false" />
+    <Property Name="end_working_day" Type="time" Precision="4" Nullable="false" />
+    <Property Name="ID_transport" Type="bigint" Nullable="false" />
+    <Property Name="break_time" Type="time" Precision="4" Nullable="false" />
+    <Property Name="number_of_watch" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Day_routs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_weekday" Type="bigint" Nullable="false" />
+    <Property Name="ID_transport" Type="bigint" Nullable="false" />
+    <Property Name="ID_route" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Districts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Districts" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_post" Type="bigint" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_gender" Type="bigint" Nullable="false" />
+    <Property Name="Pathronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone_number" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Birthday" Type="date" Nullable="false" />
+    <Property Name="ID_Salary" Type="bigint" Nullable="false" />
+    <Property Name="bonus" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Genders">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_group" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_route" Type="bigint" />
+    <Property Name="ID_employers" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Missed_route">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_route" Type="bigint" Nullable="false" />
+    <Property Name="Reason" Type="text" />
+  </EntityType>
+  <EntityType Name="Pavilions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_pavilion" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Permissions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Permission" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Post" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles_and_permissions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Role" Type="bigint" Nullable="false" />
+    <Property Name="ID_Permission" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Routes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number_route" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_district_start" Type="bigint" Nullable="false" />
+    <Property Name="ID_districts_finish" Type="bigint" Nullable="false" />
+    <Property Name="Follow_up_time" Type="time" Precision="4" Nullable="false" />
+    <Property Name="ID_transporter" Type="bigint" Nullable="false" />
+    <Property Name="Time_start" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Time_finish" Type="time" Precision="7" Nullable="false" />
+    <Property Name="ID_employers" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Salary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="salary" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Schedul">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="route_id" Type="bigint" />
+    <Property Name="transport_stop_id" Type="bigint" />
+    <Property Name="start_time" Type="time" Precision="4" Nullable="false" />
+    <Property Name="end_time" Type="time" Precision="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Schedule_changes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_route" Type="bigint" Nullable="false" />
+    <Property Name="Date_time" Type="datetime" />
+    <Property Name="Reason" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Transport_stop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_stop" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_district" Type="bigint" Nullable="false" />
+    <Property Name="ID_pavilion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Transporter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_transporter" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transports">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_type_transport" Type="bigint" Nullable="false" />
+    <Property Name="ID_rout" Type="bigint" Nullable="false" />
+    <Property Name="ID_weekday" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Types_transport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_transport" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_Role_and_permission" Type="bigint" Nullable="false" />
+    <Property Name="ID_Gender" Type="bigint" Nullable="false" />
+    <Property Name="ID_Route" Type="bigint" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Weekdays">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Weekday" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Chart_Employers">
+    <End Role="Employers" Type="Self.Employers" Multiplicity="1" />
+    <End Role="Chart" Type="Self.Chart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Chart">
+        <PropertyRef Name="ID_employers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Chart_Transports">
+    <End Role="Transports" Type="Self.Transports" Multiplicity="1" />
+    <End Role="Chart" Type="Self.Chart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transports">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Chart">
+        <PropertyRef Name="ID_transport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Day_routs_Routes">
+    <End Role="Routes" Type="Self.Routes" Multiplicity="1" />
+    <End Role="Day_routs" Type="Self.Day_routs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Routes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Day_routs">
+        <PropertyRef Name="ID_route" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Day_routs_Transports">
+    <End Role="Transports" Type="Self.Transports" Multiplicity="1" />
+    <End Role="Day_routs" Type="Self.Day_routs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transports">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Day_routs">
+        <PropertyRef Name="ID_transport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Day_routs_Weekdays">
+    <End Role="Weekdays" Type="Self.Weekdays" Multiplicity="1" />
+    <End Role="Day_routs" Type="Self.Day_routs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Weekdays">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Day_routs">
+        <PropertyRef Name="ID_weekday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employers_Genders">
+    <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+    <End Role="Employers" Type="Self.Employers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genders">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employers">
+        <PropertyRef Name="ID_gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employers_Posts">
+    <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
+    <End Role="Employers" Type="Self.Employers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employers">
+        <PropertyRef Name="ID_post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employers_Salary">
+    <End Role="Salary" Type="Self.Salary" Multiplicity="1" />
+    <End Role="Employers" Type="Self.Employers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salary">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employers">
+        <PropertyRef Name="ID_Salary" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Roles_and_permissions_Permissions">
+    <End Role="Permissions" Type="Self.Permissions" Multiplicity="1" />
+    <End Role="Roles_and_permissions" Type="Self.Roles_and_permissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permissions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Roles_and_permissions">
+        <PropertyRef Name="ID_Permission" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Roles_and_permissions_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Roles_and_permissions" Type="Self.Roles_and_permissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Roles_and_permissions">
+        <PropertyRef Name="ID_Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Routes_Districts">
+    <End Role="Districts" Type="Self.Districts" Multiplicity="1" />
+    <End Role="Routes" Type="Self.Routes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Districts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Routes">
+        <PropertyRef Name="ID_district_start" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Routes_Districts1">
+    <End Role="Districts" Type="Self.Districts" Multiplicity="1" />
+    <End Role="Routes" Type="Self.Routes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Districts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Routes">
+        <PropertyRef Name="ID_districts_finish" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Routes_Transporter">
+    <End Role="Transporter" Type="Self.Transporter" Multiplicity="1" />
+    <End Role="Routes" Type="Self.Routes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transporter">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Routes">
+        <PropertyRef Name="ID_transporter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Schedul_Routes">
+    <End Role="Routes" Type="Self.Routes" Multiplicity="0..1" />
+    <End Role="Schedul" Type="Self.Schedul" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Routes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Schedul">
+        <PropertyRef Name="route_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Schedul_Transport_stop">
+    <End Role="Transport_stop" Type="Self.Transport_stop" Multiplicity="0..1" />
+    <End Role="Schedul" Type="Self.Schedul" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transport_stop">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Schedul">
+        <PropertyRef Name="transport_stop_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_stop_Districts">
+    <End Role="Districts" Type="Self.Districts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Transport_stop" Type="Self.Transport_stop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Districts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transport_stop">
+        <PropertyRef Name="ID_district" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transport_stop_Pavilions">
+    <End Role="Pavilions" Type="Self.Pavilions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Transport_stop" Type="Self.Transport_stop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pavilions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transport_stop">
+        <PropertyRef Name="ID_pavilion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transports_Routes">
+    <End Role="Routes" Type="Self.Routes" Multiplicity="1" />
+    <End Role="Transports" Type="Self.Transports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Routes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transports">
+        <PropertyRef Name="ID_rout" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transports_Types_transport">
+    <End Role="Types_transport" Type="Self.Types_transport" Multiplicity="1" />
+    <End Role="Transports" Type="Self.Transports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Types_transport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transports">
+        <PropertyRef Name="ID_type_transport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transports_Weekdays">
+    <End Role="Weekdays" Type="Self.Weekdays" Multiplicity="1" />
+    <End Role="Transports" Type="Self.Transports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Weekdays">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Transports">
+        <PropertyRef Name="ID_weekday" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Genders">
+    <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genders">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ID_Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles_and_permissions">
+    <End Role="Roles_and_permissions" Type="Self.Roles_and_permissions" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles_and_permissions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ID_Role_and_permission" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Routes">
+    <End Role="Routes" Type="Self.Routes" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Routes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ID_Route" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Public_transportModelContainer">
+    <EntitySet Name="Chart" EntityType="Self.Chart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Day_routs" EntityType="Self.Day_routs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Districts" EntityType="Self.Districts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employers" EntityType="Self.Employers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Missed_route" EntityType="Self.Missed_route" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pavilions" EntityType="Self.Pavilions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permissions" EntityType="Self.Permissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles_and_permissions" EntityType="Self.Roles_and_permissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Routes" EntityType="Self.Routes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salary" EntityType="Self.Salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Schedul" EntityType="Self.Schedul" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Schedule_changes" EntityType="Self.Schedule_changes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transport_stop" EntityType="Self.Transport_stop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transporter" EntityType="Self.Transporter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transports" EntityType="Self.Transports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Types_transport" EntityType="Self.Types_transport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Weekdays" EntityType="Self.Weekdays" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Chart_Employers" Association="Self.FK_Chart_Employers">
+      <End Role="Employers" EntitySet="Employers" />
+      <End Role="Chart" EntitySet="Chart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Chart_Transports" Association="Self.FK_Chart_Transports">
+      <End Role="Transports" EntitySet="Transports" />
+      <End Role="Chart" EntitySet="Chart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Day_routs_Routes" Association="Self.FK_Day_routs_Routes">
+      <End Role="Routes" EntitySet="Routes" />
+      <End Role="Day_routs" EntitySet="Day_routs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Day_routs_Transports" Association="Self.FK_Day_routs_Transports">
+      <End Role="Transports" EntitySet="Transports" />
+      <End Role="Day_routs" EntitySet="Day_routs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Day_routs_Weekdays" Association="Self.FK_Day_routs_Weekdays">
+      <End Role="Weekdays" EntitySet="Weekdays" />
+      <End Role="Day_routs" EntitySet="Day_routs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employers_Genders" Association="Self.FK_Employers_Genders">
+      <End Role="Genders" EntitySet="Genders" />
+      <End Role="Employers" EntitySet="Employers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employers_Posts" Association="Self.FK_Employers_Posts">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="Employers" EntitySet="Employers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employers_Salary" Association="Self.FK_Employers_Salary">
+      <End Role="Salary" EntitySet="Salary" />
+      <End Role="Employers" EntitySet="Employers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Roles_and_permissions_Permissions" Association="Self.FK_Roles_and_permissions_Permissions">
+      <End Role="Permissions" EntitySet="Permissions" />
+      <End Role="Roles_and_permissions" EntitySet="Roles_and_permissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Roles_and_permissions_Roles" Association="Self.FK_Roles_and_permissions_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Roles_and_permissions" EntitySet="Roles_and_permissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Routes_Districts" Association="Self.FK_Routes_Districts">
+      <End Role="Districts" EntitySet="Districts" />
+      <End Role="Routes" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Routes_Districts1" Association="Self.FK_Routes_Districts1">
+      <End Role="Districts" EntitySet="Districts" />
+      <End Role="Routes" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Routes_Transporter" Association="Self.FK_Routes_Transporter">
+      <End Role="Transporter" EntitySet="Transporter" />
+      <End Role="Routes" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Schedul_Routes" Association="Self.FK_Schedul_Routes">
+      <End Role="Routes" EntitySet="Routes" />
+      <End Role="Schedul" EntitySet="Schedul" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Schedul_Transport_stop" Association="Self.FK_Schedul_Transport_stop">
+      <End Role="Transport_stop" EntitySet="Transport_stop" />
+      <End Role="Schedul" EntitySet="Schedul" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_stop_Districts" Association="Self.FK_Transport_stop_Districts">
+      <End Role="Districts" EntitySet="Districts" />
+      <End Role="Transport_stop" EntitySet="Transport_stop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transport_stop_Pavilions" Association="Self.FK_Transport_stop_Pavilions">
+      <End Role="Pavilions" EntitySet="Pavilions" />
+      <End Role="Transport_stop" EntitySet="Transport_stop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transports_Routes" Association="Self.FK_Transports_Routes">
+      <End Role="Routes" EntitySet="Routes" />
+      <End Role="Transports" EntitySet="Transports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transports_Types_transport" Association="Self.FK_Transports_Types_transport">
+      <End Role="Types_transport" EntitySet="Types_transport" />
+      <End Role="Transports" EntitySet="Transports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transports_Weekdays" Association="Self.FK_Transports_Weekdays">
+      <End Role="Weekdays" EntitySet="Weekdays" />
+      <End Role="Transports" EntitySet="Transports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Genders" Association="Self.FK_Users_Genders">
+      <End Role="Genders" EntitySet="Genders" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles_and_permissions" Association="Self.FK_Users_Roles_and_permissions">
+      <End Role="Roles_and_permissions" EntitySet="Roles_and_permissions" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Routes" Association="Self.FK_Users_Routes">
+      <End Role="Routes" EntitySet="Routes" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d9ecd39c3b6c4822af168ef3a619c0ba" Name="Diagram1">
+        <EntityTypeShape EntityType="Public_transportModel.Chart" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Day_routs" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Districts" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Employers" Width="1.5" PointX="5.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Genders" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Group" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Missed_route" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Pavilions" Width="1.5" PointX="3.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Permissions" Width="1.5" PointX="0.75" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Posts" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Roles" Width="1.5" PointX="0.75" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Roles_and_permissions" Width="1.5" PointX="3" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Routes" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Salary" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Schedul" Width="1.5" PointX="11.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Schedule_changes" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Transport_stop" Width="1.5" PointX="6" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Transporter" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Transports" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Types_transport" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Users" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Public_transportModel.Weekdays" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="Public_transportModel.FK_Chart_Employers" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Chart_Transports" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Day_routs_Routes" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Day_routs_Transports" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Day_routs_Weekdays" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Routes_Districts" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Routes_Districts1" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Transport_stop_Districts" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Employers_Genders" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Employers_Posts" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Employers_Salary" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Users_Genders" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Transport_stop_Pavilions" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Roles_and_permissions_Permissions" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Roles_and_permissions_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Users_Roles_and_permissions" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Routes_Transporter" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Schedul_Routes" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Transports_Routes" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Users_Routes" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Schedul_Transport_stop" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Transports_Types_transport" ManuallyRouted="false" />
+        <AssociationConnector Association="Public_transportModel.FK_Transports_Weekdays" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

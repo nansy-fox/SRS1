@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Public_transportModelContainer" CdmEntityContainer="Public_transportEntities1">
+    <EntitySetMapping Name="Chart">
+      <EntityTypeMapping TypeName="Public_transportModel.Chart">
+        <MappingFragment StoreEntitySet="Chart">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_employers" ColumnName="ID_employers" />
+          <ScalarProperty Name="start_working_day" ColumnName="start_working_day" />
+          <ScalarProperty Name="end_working_day" ColumnName="end_working_day" />
+          <ScalarProperty Name="ID_transport" ColumnName="ID_transport" />
+          <ScalarProperty Name="break_time" ColumnName="break_time" />
+          <ScalarProperty Name="number_of_watch" ColumnName="number_of_watch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Day_routs">
+      <EntityTypeMapping TypeName="Public_transportModel.Day_routs">
+        <MappingFragment StoreEntitySet="Day_routs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_weekday" ColumnName="ID_weekday" />
+          <ScalarProperty Name="ID_transport" ColumnName="ID_transport" />
+          <ScalarProperty Name="ID_route" ColumnName="ID_route" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Districts">
+      <EntityTypeMapping TypeName="Public_transportModel.Districts">
+        <MappingFragment StoreEntitySet="Districts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Districts1" ColumnName="Districts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employers">
+      <EntityTypeMapping TypeName="Public_transportModel.Employers">
+        <MappingFragment StoreEntitySet="Employers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_post" ColumnName="ID_post" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID_gender" ColumnName="ID_gender" />
+          <ScalarProperty Name="Pathronymic" ColumnName="Pathronymic" />
+          <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="ID_Salary" ColumnName="ID_Salary" />
+          <ScalarProperty Name="bonus" ColumnName="bonus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="Public_transportModel.Genders">
+        <MappingFragment StoreEntitySet="Genders">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group">
+      <EntityTypeMapping TypeName="Public_transportModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_group" ColumnName="Name_group" />
+          <ScalarProperty Name="ID_route" ColumnName="ID_route" />
+          <ScalarProperty Name="ID_employers" ColumnName="ID_employers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Missed_route">
+      <EntityTypeMapping TypeName="Public_transportModel.Missed_route">
+        <MappingFragment StoreEntitySet="Missed_route">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_route" ColumnName="ID_route" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pavilions">
+      <EntityTypeMapping TypeName="Public_transportModel.Pavilions">
+        <MappingFragment StoreEntitySet="Pavilions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_pavilion" ColumnName="Name_pavilion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions">
+      <EntityTypeMapping TypeName="Public_transportModel.Permissions">
+        <MappingFragment StoreEntitySet="Permissions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="Public_transportModel.Posts">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Public_transportModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="User_name" ColumnName="User_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles_and_permissions">
+      <EntityTypeMapping TypeName="Public_transportModel.Roles_and_permissions">
+        <MappingFragment StoreEntitySet="Roles_and_permissions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+          <ScalarProperty Name="ID_Permission" ColumnName="ID_Permission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="Public_transportModel.Routes">
+        <MappingFragment StoreEntitySet="Routes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Number_route" ColumnName="Number_route" />
+          <ScalarProperty Name="ID_district_start" ColumnName="ID_district_start" />
+          <ScalarProperty Name="ID_districts_finish" ColumnName="ID_districts_finish" />
+          <ScalarProperty Name="Follow_up_time" ColumnName="Follow_up_time" />
+          <ScalarProperty Name="ID_transporter" ColumnName="ID_transporter" />
+          <ScalarProperty Name="Time_start" ColumnName="Time_start" />
+          <ScalarProperty Name="Time_finish" ColumnName="Time_finish" />
+          <ScalarProperty Name="ID_employers" ColumnName="ID_employers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salary">
+      <EntityTypeMapping TypeName="Public_transportModel.Salary">
+        <MappingFragment StoreEntitySet="Salary">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="salary1" ColumnName="salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedul">
+      <EntityTypeMapping TypeName="Public_transportModel.Schedul">
+        <MappingFragment StoreEntitySet="Schedul">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="route_id" ColumnName="route_id" />
+          <ScalarProperty Name="transport_stop_id" ColumnName="transport_stop_id" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedule_changes">
+      <EntityTypeMapping TypeName="Public_transportModel.Schedule_changes">
+        <MappingFragment StoreEntitySet="Schedule_changes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_route" ColumnName="ID_route" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Public_transportModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transport_stop">
+      <EntityTypeMapping TypeName="Public_transportModel.Transport_stop">
+        <MappingFragment StoreEntitySet="Transport_stop">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_stop" ColumnName="Name_stop" />
+          <ScalarProperty Name="ID_district" ColumnName="ID_district" />
+          <ScalarProperty Name="ID_pavilion" ColumnName="ID_pavilion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transporter">
+      <EntityTypeMapping TypeName="Public_transportModel.Transporter">
+        <MappingFragment StoreEntitySet="Transporter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_transporter" ColumnName="Name_transporter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transports">
+      <EntityTypeMapping TypeName="Public_transportModel.Transports">
+        <MappingFragment StoreEntitySet="Transports">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_type_transport" ColumnName="ID_type_transport" />
+          <ScalarProperty Name="ID_rout" ColumnName="ID_rout" />
+          <ScalarProperty Name="ID_weekday" ColumnName="ID_weekday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Types_transport">
+      <EntityTypeMapping TypeName="Public_transportModel.Types_transport">
+        <MappingFragment StoreEntitySet="Types_transport">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_transport" ColumnName="Name_transport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Public_transportModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="ID_Role_and_permission" ColumnName="ID_Role_and_permission" />
+          <ScalarProperty Name="ID_Gender" ColumnName="ID_Gender" />
+          <ScalarProperty Name="ID_Route" ColumnName="ID_Route" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Weekdays">
+      <EntityTypeMapping TypeName="Public_transportModel.Weekdays">
+        <MappingFragment StoreEntitySet="Weekdays">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Weekday" ColumnName="Weekday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

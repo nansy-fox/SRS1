@@ -1,0 +1,35 @@
+﻿<Page x:Class="Practical_for_BD.Pages.Admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Practical_for_BD.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Admin" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" x:Name="DGUsers">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Full_Name}" Header="ФИО администратора" Width="330" x:Name="name"/>
+                <DataGridTextColumn Binding="{Binding Gender}" Header="Пол" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Route}" Header="Маршруты" Width="150" />
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Изменить" Name="btnUpdate" Click="btnUpdate_Click" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="deleteButton" Content="Удалить"/>
+        </StackPanel>
+    </Grid>
+</Page>
